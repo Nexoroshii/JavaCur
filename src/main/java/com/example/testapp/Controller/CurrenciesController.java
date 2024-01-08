@@ -40,8 +40,8 @@ class CurrenciesController {
         }
     }
 
-    @GetMapping("/{id}")
-    public ResponseEntity<CurrencyRecordDTO> getCurrencyData(@RequestParam String date, @PathVariable Integer id) {
+    @GetMapping("/")
+    public ResponseEntity<CurrencyRecordDTO> getCurrencyData(@RequestParam String date, @RequestParam Integer id) {
         try {
             var localDate = parseRequestParamLocalDate(date);
             var result = businessLogicProcessor.getCurrencyDataByDateAndId(localDate, id);
