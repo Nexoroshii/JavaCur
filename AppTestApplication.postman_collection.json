@@ -1,0 +1,120 @@
+{
+	"info": {
+		"_postman_id": "b9d7ca3b-4cdb-49a0-bae2-1926ec7a737c",
+		"name": "AppTestApplication",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27785451"
+	},
+	"item": [
+		{
+			"name": "currencies",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{backendURL}}/api/currencies/check?date=1999-05-13",
+					"host": [
+						"{{backendURL}}"
+					],
+					"path": [
+						"api",
+						"currencies",
+						"check"
+					],
+					"query": [
+						{
+							"key": "date",
+							"value": "1999-05-13"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "NBRBbankRates",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{bankURL}}/exrates/rates?ondate=2023-01-10&periodicity=0",
+					"host": [
+						"{{bankURL}}"
+					],
+					"path": [
+						"exrates",
+						"rates"
+					],
+					"query": [
+						{
+							"key": "ondate",
+							"value": "2023-01-10"
+						},
+						{
+							"key": "periodicity",
+							"value": "0"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getCurrencyData",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{backendURL}}/api/currencies/170?date=2004-05-13",
+					"host": [
+						"{{backendURL}}"
+					],
+					"path": [
+						"api",
+						"currencies",
+						"170"
+					],
+					"query": [
+						{
+							"key": "date",
+							"value": "2004-05-13"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "backendURL",
+			"value": "http://localhost:8080",
+			"type": "string"
+		},
+		{
+			"key": "bankURL",
+			"value": "https://api.nbrb.by",
+			"type": "string"
+		}
+	]
+}
