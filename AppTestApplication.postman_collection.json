@@ -12,7 +12,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{backendURL}}/api/currencies/check?date=1999-05-13",
+					"raw": "{{backendURL}}/api/currencies/check?date=2022-05-15",
 					"host": [
 						"{{backendURL}}"
 					],
@@ -24,7 +24,7 @@
 					"query": [
 						{
 							"key": "date",
-							"value": "1999-05-13"
+							"value": "2022-05-15"
 						}
 					]
 				}
@@ -65,19 +65,23 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{backendURL}}/api/currencies/170?date=2004-05-13",
+					"raw": "{{backendURL}}/api/currencies/?date=2022-05-15&id=431",
 					"host": [
 						"{{backendURL}}"
 					],
 					"path": [
 						"api",
 						"currencies",
-						"170"
+						""
 					],
 					"query": [
 						{
 							"key": "date",
-							"value": "2004-05-13"
+							"value": "2022-05-15"
+						},
+						{
+							"key": "id",
+							"value": "431"
 						}
 					]
 				}
