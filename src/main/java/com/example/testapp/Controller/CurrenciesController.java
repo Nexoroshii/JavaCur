@@ -24,15 +24,19 @@ class CurrenciesController {
     BusinessLogicProcessor businessLogicProcessor;
 
     @GetMapping("/check")
-    public ResponseEntity<Void> check(@RequestParam String date) {
+    public ResponseEntity<String> check(@RequestParam String date) {
         try {
             var localDate = parseRequestParamLocalDate(date);
             var result = businessLogicProcessor.checkIfCurrencyDateRecordExists(localDate);
 
+
+
             HttpHeaders headers = new HttpHeaders();
             headers.add("CRC32", calculateCRC32(result.toString()));
 
-            return new ResponseEntity<>(headers, result ? HttpStatus.OK : HttpStatus.NOT_FOUND);
+            String message = result ? "The currency exchange rates for the selected date have been successfully loaded into the system." : "Currency date record not found";
+
+            return new ResponseEntity<>(message, headers, result ? HttpStatus.OK : HttpStatus.NOT_FOUND);
         } catch (DateTimeParseException e) {
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         } catch (Exception e) {
