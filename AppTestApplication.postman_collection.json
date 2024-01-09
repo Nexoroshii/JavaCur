@@ -12,14 +12,14 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{backendURL}}/api/currencies/check?date=2022-05-15",
+					"raw": "{{backendURL}}/api/currencies/getCurrencies?date=2022-05-15",
 					"host": [
 						"{{backendURL}}"
 					],
 					"path": [
 						"api",
 						"currencies",
-						"check"
+						"getCurrencies"
 					],
 					"query": [
 						{
@@ -65,14 +65,14 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{backendURL}}/api/currencies/?date=2022-05-15&id=431",
+					"raw": "{{backendURL}}/api/currencies/getCurrencyByCode?date=2022-05-15&id=431",
 					"host": [
 						"{{backendURL}}"
 					],
 					"path": [
 						"api",
 						"currencies",
-						""
+						"getCurrencyByCode"
 					],
 					"query": [
 						{
