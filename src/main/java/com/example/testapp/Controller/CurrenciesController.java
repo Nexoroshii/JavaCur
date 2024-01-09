@@ -23,7 +23,7 @@ class CurrenciesController {
     @Autowired
     BusinessLogicProcessor businessLogicProcessor;
 
-    @GetMapping("/check")
+    @GetMapping("/getCurrencies")
     public ResponseEntity<String> check(@RequestParam String date) {
         try {
             var localDate = parseRequestParamLocalDate(date);
@@ -44,7 +44,7 @@ class CurrenciesController {
         }
     }
 
-    @GetMapping("/")
+    @GetMapping("/getCurrencyByCode")
     public ResponseEntity<CurrencyRecordDTO> getCurrencyData(@RequestParam String date, @RequestParam Integer id) {
         try {
             var localDate = parseRequestParamLocalDate(date);
